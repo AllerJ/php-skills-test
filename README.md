@@ -1,8 +1,6 @@
 # php-skills-test
 Answer to skills test from an interview.
 
-**Note: Simple console output is acceptable and desired for the below questions.**
-
 ## Question 1
 
 Given the following example data structure. Write a single function to print out its nested key value pairs at any level for easy display to the user.
