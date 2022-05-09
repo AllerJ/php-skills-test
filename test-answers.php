@@ -1,14 +1,6 @@
-# php-skills-test
-Answer to skills test from an interview.
+<?php
 
-**Note: Simple console output is acceptable and desired for the below questions.**
-
-## Question 1
-
-Given the following example data structure. Write a single function to print out its nested key value pairs at any level for easy display to the user.
-
-```php
-array (  
+$guests = array (  
 	array (
 		'guest_id' => 177,
 		'guest_type' => 'crew',
@@ -124,8 +116,82 @@ array (
 		),
 	),
 );
-```
 
-## Question 2
+function easy_to_read( $key ) {
+	return ucwords( str_replace( '_', ' ', $key ) );
+}
 
-Given the above example data structure again. Write a PHP function/method to sort the data structure based on a key OR keys regardless of what level it or they occurs with in the data structure ( i.e. sort by last_name **AND** sort by account_id ). **HINT**: Recursion is your friend.
+function question_one( $guests, $key ) {
+		$record = "--------------------------- GUESTS SORT BY " . strtoupper(easy_to_read($key)) . "---------------------------\n\n\n";
+		foreach( $guests as $guest ) {
+		
+			$record .= "------- Guest Booking Record -------\n";
+						
+			foreach( $guest as $key => $value ) {
+				
+
+				
+				if( $key == 'guest_booking' || $key == 'guest_account' ) {
+					
+					$record .= "\n\t - " . easy_to_read( $key ) . " - \n";
+					
+					foreach($value[0] as $key => $value) {
+						$record .= "\t" . easy_to_read( $key ) . ': ' . easy_to_read( $value ) . "\n";
+					}
+				
+				} else {
+					$record .= easy_to_read( $key ) . ': ' . easy_to_read( $value ) . "\n";
+				}
+				
+			}
+			
+			$record .= "\n\n";
+			
+		}
+	return $record;
+}
+
+function question_two($key = 'last_name') {
+	GLOBAL $guests;
+	$by_key=[];
+	
+	foreach($guests as $guest) {
+	
+		$arr=[];
+		array_walk_recursive(
+			  $guest, 
+			  function($item, $key) use (&$arr) {
+				   $arr[$key]=$item;
+			   }
+		);
+	
+		$by_key[$arr['guest_id']] = $arr[$key] ;
+		
+	}
+	asort($by_key);
+	$final = [];
+	foreach($by_key as $build => $value) {
+	
+		$final_hold = array_filter($guests, function ($item) use ($build) {
+				if ($item['guest_id'] == $build) {
+					return $item;
+				}	
+			});
+		array_shift(array_values($final_hold));
+		$final[]  = array_shift(array_values($final_hold));
+		
+	}
+	
+	
+	return question_one($final, $key);
+	
+}
+
+$stdin = fopen('php://stdin', 'r');
+echo 'Key to sort on: ';
+$input = trim(fgets($stdin));
+
+echo question_two($input);
+
+
+?>

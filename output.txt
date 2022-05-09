@@ -1,0 +1,102 @@
+[ps595013]$ php rx-test.php
+Key to sort on: last_name
+--------------------------- GUESTS SORT BY LAST NAME---------------------------
+
+
+------- Guest Booking Record -------
+Guest Id: 177
+Guest Type: Crew
+First Name: Marco
+Middle Name: 
+Last Name: Burns
+Gender: M
+
+		 - Guest Booking - 
+		Booking Number: 20008683
+		Ship Code: OST
+		Room No: A0073
+		Start Time: 1438214400
+		End Time: 1483142400
+		Is Checked In: 1
+
+		 - Guest Account - 
+		Account Id: 20009503
+		Status Id: 2
+		Account Limit: 0
+		Allow Charges: 1
+
+
+------- Guest Booking Record -------
+Guest Id: 10000115
+Guest Type: Crew
+First Name: Red 
+Middle Name: Ruby
+Last Name: Flowers 
+Gender: F
+
+		 - Guest Booking - 
+		Booking Number: 10000015
+		Room No: A0051
+		Is Checked In: 1
+
+		 - Guest Account - 
+		Account Id: 10000519
+		Account Limit: 300
+		Allow Charges: 1
+
+
+------- Guest Booking Record -------
+Guest Id: 10000113
+Guest Type: Crew
+First Name: Bob Jr 
+Middle Name: Charles
+Last Name: Hemingway
+Gender: M
+
+		 - Guest Booking - 
+		Booking Number: 10000013
+		Room No: B0092
+		Is Checked In: 1
+
+		 - Guest Account - 
+		Account Id: 10000522
+		Account Limit: 300
+		Allow Charges: 1
+
+
+------- Guest Booking Record -------
+Guest Id: 10000116
+Guest Type: Crew
+First Name: Ismael 
+Middle Name: Jean-Vital
+Last Name: Jammes
+Gender: M
+
+		 - Guest Booking - 
+		Booking Number: 10000016
+		Room No: A0023
+		Is Checked In: 1
+
+		 - Guest Account - 
+		Account Id: 10000015
+		Account Limit: 300
+		Allow Charges: 1
+
+
+------- Guest Booking Record -------
+Guest Id: 10000114
+Guest Type: Crew
+First Name: Al 
+Middle Name: Bert
+Last Name: Santiago
+Gender: M
+
+		 - Guest Booking - 
+		Booking Number: 10000014
+		Room No: A0018
+		Is Checked In: 1
+
+		 - Guest Account - 
+		Account Id: 10000013
+		Account Limit: 300
+		Allow Charges: 
